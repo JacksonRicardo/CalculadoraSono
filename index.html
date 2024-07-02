@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Sono</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        input, button {
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Calculadora de Sono</h1>
+    <label for="idade">Digite sua idade:</label>
+    <input type="number" id="idade" placeholder="Ex: 35">
+    
+    <label for="horas_sono">Horas de sono por dia:</label>
+    <input type="number" id="horas_sono" placeholder="Ex: 8" value="8">
+    
+    <button onclick="calcularSono()">Calcular</button>
+    <div id="resultado"></div>
+</div>
+
+<script>
+    function calcularSono() {
+        const idade = document.getElementById('idade').value;
+        const horas_sono = document.getElementById('horas_sono').value;
+
+        if (!idade || !horas_sono) {
+            document.getElementById('resultado').innerHTML = '<p>Por favor, preencha todos os campos.</p>';
+            return;
+        }
+
+        const total_horas_sono = idade * 365 * horas_sono;
+        const total_anos_sono = total_horas_sono / (24 * 365);
+
+        document.getElementById('resultado').innerHTML = `
+            <p>Total de Horas de Sono: ${total_horas_sono.toFixed(2)}</p>
+            <p>Total de Anos de Sono: ${total_anos_sono.toFixed(2)}</p>
+        `;
+    }
+</script>
+
+</body>
+</html>
