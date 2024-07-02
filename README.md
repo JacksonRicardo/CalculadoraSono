@@ -42,9 +42,3 @@ Este repositório contém uma aplicação web simples para calcular o total de h
 - JavaScript
 
 Sinta-se à vontade para clonar este repositório, modificar e adaptar conforme necessário para suas necessidades.
-
-## Instruções de Clone
-
-```bash
-git clone https://github.com/seuusuario/calculadora-de-sono.git
-cd calculadora-de-sono
